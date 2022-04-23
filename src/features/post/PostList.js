@@ -1,20 +1,21 @@
 import { useEffect } from "react";
-import PostItem from "./PostItem"
 import { useDispatch, useSelector } from "react-redux"
+import PostItem from "./PostItem"
 import { fetchPosts } from "./postSlice";
+import './Post.scss'
 
 export default function PostList() {
     const dispatch = useDispatch();
-    const list = useSelector(state => state.postList)
+    const list = useSelector(state => state.posts.postList)
 
     useEffect(() => {
         dispatch(fetchPosts())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="posts">
             {
-                list && list.map(item => (
+                list.map(item => (
                     <PostItem
                         key={item.id}
                         title={item.title}

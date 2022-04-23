@@ -1,7 +1,9 @@
 .posts {
   &__item {
-    background: #ccc;
+    background: #fff;
     border-radius: 1rem;
-    border: 2px solid #c3c3c3;
+    border: 2px solid #ccc;
+    margin: 1rem;
+    padding: 1rem;
   }
 }
