@@ -18,8 +18,7 @@ export default function PostList() {
                 list.map(item => (
                     <PostItem
                         key={item.id}
-                        title={item.title}
-                        body={item.body}
+                        data={item}
                     />
                 ))
             }
