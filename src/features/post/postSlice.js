@@ -13,10 +13,16 @@ const initialState = {
     isFetching: false
 }
 
+
+
 const postSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {},
+    reducers: {
+        likePost: (state, action) => {
+            state.likedPosts = [...state.likedPosts, action.payload]
+        }
+    },
     extraReducers: {
         [fetchPosts.fulfilled]: (state, action) => {
             state.postList = action.payload
@@ -32,4 +38,5 @@ const postSlice = createSlice({
     }
 })
 
+export const { likePost } = postSlice.actions;
 export default postSlice.reducer;
