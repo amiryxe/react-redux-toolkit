@@ -6,4 +6,18 @@
     margin: 1rem;
     padding: 1rem;
   }
+
+  &__like {
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #eee;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
 }

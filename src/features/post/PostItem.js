@@ -17,7 +17,7 @@ export default function PostItem({ data: { id, title, body, likeCounts } }) {
         <div className="posts__item">
             <h2>{title}</h2>
             <p>{body}</p>
-            <button onClick={handleLike}>
+            <button className="posts__like" onClick={handleLike}>
                 {likePostList.includes(id) ? "Liked!" : "Like"}
             </button>
         </div>
