@@ -22,7 +22,7 @@ const postSlice = createSlice({
             state.likedPosts = [...state.likedPosts, action.payload]
         },
         unLikePost: (state, action) => {
-            state.likedPosts = state.likedPosts.filter(item => item != action.payload)
+            state.likedPosts = state.likedPosts.filter(item => item !== action.payload)
         }
     },
     extraReducers: {
