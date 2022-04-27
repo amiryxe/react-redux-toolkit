@@ -1,7 +1,7 @@
 import { likePost, unLikePost } from "./postSlice"
 import { useDispatch, useSelector } from "react-redux"
 
-export default function PostItem({ data: { id, title, body, likeCounts } }) {
+export default function PostItem({ data: { id, title, body } }) {
     const dispatch = useDispatch()
     const likePostList = useSelector(state => state.posts.likedPosts)
 
