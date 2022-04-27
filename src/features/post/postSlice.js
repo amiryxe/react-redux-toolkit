@@ -7,9 +7,11 @@ export const fetchPosts = createAsyncThunk('posts/fetch', async () => {
     return data
 })
 
+const existLikedPosts = localStorage.getItem('likedPosts')
+
 const initialState = {
     postList: [],
-    likedPosts: [],
+    likedPosts: existLikedPosts || [],
     errorMessage: '',
     isFetching: false
 }
@@ -26,6 +28,8 @@ const postSlice = createSlice({
                 // dislike post
                 state.likedPosts = state.likedPosts.filter(item => item !== action.payload)
             }
+
+            localStorage.setItem('likedPosts', JSON.stringify(state.likedPosts))
         }
     },
     extraReducers: {
