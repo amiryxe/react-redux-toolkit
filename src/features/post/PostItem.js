@@ -1,4 +1,4 @@
-import { likePost, unLikePost } from "./postSlice"
+import { likePost } from "./postSlice"
 import { useDispatch, useSelector } from "react-redux"
 
 export default function PostItem({ data: { id, title, body } }) {
