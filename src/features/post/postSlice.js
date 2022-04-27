@@ -19,10 +19,13 @@ const postSlice = createSlice({
     initialState,
     reducers: {
         likePost: (state, action) => {
-            state.likedPosts = [...state.likedPosts, action.payload]
-        },
-        unLikePost: (state, action) => {
-            state.likedPosts = state.likedPosts.filter(item => item !== action.payload)
+            if (!state.likedPosts.includes(action.payload)) {
+                // like post
+                state.likedPosts = [...state.likedPosts, action.payload]
+            } else {
+                // dislike post
+                state.likedPosts = state.likedPosts.filter(item => item !== action.payload)
+            }
         }
     },
     extraReducers: {
@@ -40,5 +43,5 @@ const postSlice = createSlice({
     }
 })
 
-export const { likePost, unLikePost } = postSlice.actions;
+export const { likePost } = postSlice.actions;
 export default postSlice.reducer;
