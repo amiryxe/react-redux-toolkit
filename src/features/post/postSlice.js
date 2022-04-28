@@ -23,7 +23,7 @@ const postSlice = createSlice({
         likePost: (state, action) => {
             if (!state.likedPosts.includes(action.payload)) {
                 // like post
-                state.likedPosts = [...state.likedPosts, action.payload]
+                state.likedPosts.push(action.payload)
             } else {
                 // dislike post
                 state.likedPosts = state.likedPosts.filter(item => item !== action.payload)
