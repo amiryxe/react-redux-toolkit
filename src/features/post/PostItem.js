@@ -10,7 +10,7 @@ export default function PostItem({ data: { id, title, body } }) {
             <h2>{title}</h2>
             <p>{body}</p>
             <button className="posts__like" onClick={() => dispatch(likePost(id))}>
-                {likePostList.includes(id) ? "Liked!" : "Like"}
+                {likePostList.includes(id) ? "❤️ Liked!" : "🤍 Like"}
             </button>
         </div>
     )
