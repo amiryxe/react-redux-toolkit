@@ -11,7 +11,7 @@ const existLikedPosts = localStorage.getItem('likedPosts')
 
 const initialState = {
     postList: [],
-    likedPosts: existLikedPosts || [],
+    likedPosts: JSON.parse(existLikedPosts) || [],
     errorMessage: '',
     isFetching: false
 }
