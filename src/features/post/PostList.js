@@ -6,7 +6,7 @@ import './Post.scss'
 
 export default function PostList() {
     const dispatch = useDispatch();
-    const list = useSelector(state => state.posts.postList)
+    const { postList, isFetching } = useSelector(state => state.posts)
 
     useEffect(() => {
         dispatch(fetchPosts())
@@ -15,12 +15,14 @@ export default function PostList() {
     return (
         <div className="posts">
             {
-                list.map(item => (
-                    <PostItem
-                        key={item.id}
-                        data={item}
-                    />
-                ))
+                isFetching ?
+                    <h2>Loading...</h2> :
+                    postList.map(item => (
+                        <PostItem
+                            key={item.id}
+                            data={item}
+                        />
+                    ))
             }
         </div>
     )
